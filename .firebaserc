@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "koneksiyon-11b7e": {
+      "hosting": {
+        "hello-world": [
+          "koneksiyon-11b7e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "koneksiyon-11b7e"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "hello-world",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

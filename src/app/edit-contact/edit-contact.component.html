@@ -1,0 +1,47 @@
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<div class="header-content">  
+    <button class="button" (click)="navigateToContacts()"> 
+        <i class='bx bxs-left-arrow-circle'></i>
+    </button>
+    <div class="text">Edit Contact</div>
+    <hr class="divider">
+</div>
+
+<div class="edit-contact">
+    <h2>Edit Details</h2>
+    <p>Edit the contact details of this person.</p>
+</div>
+
+<form #f="ngForm" [ngFormOptions]="{updateOn: 'submit'}" (ngSubmit)="saveContact()">
+    <div class="new-contact-details">
+        <div class="col1">
+            <p class="input-label">Name</p>
+            <input type="text" name="name" placeholder="Input contact name" [value]="getDocData?.name" [(ngModel)]="formData.name">
+            <p class="input-label">Email Address</p>
+            <input type="email" name="email" placeholder="emailaddress12345@gmail.com" [value]="getDocData?.email" [(ngModel)]="formData.email">
+            <p class="input-label">Telephone Number</p>
+            <input type="text" name="phonenumber" placeholder="numerical characters only, + is optional (example: +639223334444)" [value]="getDocData?.phonenumber" [(ngModel)]="formData.phonenumber">
+            <p class="input-label">Favorite Flag</p>
+            <div class="custom-dropdown">
+                <select class="form-control" name="country" id="country" [value]="getDocData?.country" [(ngModel)]="formData.country">
+                    <option value="" disabled selected>Select Country</option>
+                    <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+               </select>
+            </div>
+        </div>
+        <div class="col2">
+            <p class="input-label">Nickname</p>
+            <input type="text" name="nickname" placeholder="place a custom nickname " [value]="getDocData?.nickname" [(ngModel)]="formData.nickname">
+            <p class="input-label">Affiliation</p>
+            <input type="text" name="affiliation" placeholder="enter affiliation with contact " [value]="getDocData?.affiliation" [(ngModel)]="formData.affiliation">
+            <p class="input-label">Description</p>
+            <input type="text" name="description" placeholder="add a custom description" class="desc" [value]="getDocData?.description" [(ngModel)]="formData.description">
+            <button type="submit" class="button">
+                <i class='bx bx-save' ></i>
+                <p>Update Details</p>
+            </button>
+        </div>
+    </div>
+</form>

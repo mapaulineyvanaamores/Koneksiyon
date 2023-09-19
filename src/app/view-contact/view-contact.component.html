@@ -1,0 +1,29 @@
+<div class="transparent">
+    <app-contacts></app-contacts>
+</div>
+
+<div class="contact-details">
+    <button class="route" (click)="navigateToContacts()">
+        <i class='bx bx-x-circle'></i>
+    </button>
+    <div class="contents">
+        <h1>{{getDocData.name}}</h1>
+        <h3>{{getDocData.affiliation}}</h3>
+        <hr class="divider">
+        <div class="form-group">
+            <p class="label-form">Nickname: </p> <p class="form-value"> {{getDocData.nickname}} </p> 
+        </div>
+        <div class="form-group">
+            <p class="label-form">Email Address: </p> <p class="form-value">{{getDocData.email}}</p> 
+        </div>
+        <div class="form-group">
+            <p class="label-form">Telephone Number: </p> <p class="form-value">{{getDocData.phonenumber}}</p> 
+        </div>
+        <div class="form-group">
+            <p class="label-form">Favorite Flag: </p> <p class="form-value"><i class='bx bxs-flag-alt' style='color:black' ></i> {{getDocData.country}}</p> 
+        </div>
+        <div class="form-group">
+            <p class="label-form">Description: </p> <p class="form-value">{{getDocData.description}}</p> 
+        </div>
+    </div>
+</div>

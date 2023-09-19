@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
+*{
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*HEADER OF CONTACTS SECTIONS*/
+.header-content{
+    align-items: center;
+}
+
+.header-content .button{
+    float: left;
+    margin-left: 30px;
+    margin-top: 4px;
+    font-size: 30px;
+    color: #1f516e;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.header-content .button:hover{
+    opacity: 0.5;
+}
+
+.header-content .text{
+    font-size: 25px;
+    font-weight: 600;
+    color: #1f516e;
+    margin: 12px;
+    padding: 5px;
+    padding-left: 70px;
+}
+
+hr.divider{
+    border-top: 1px solid #1f516e;
+    opacity: 0.2;
+}
+/*HEADER OF CONTACTS SECTIONS*/
+
+/*HEADER FOR CONTACT NEW*/
+.edit-contact{
+    margin-left: 200px;
+    margin-top: 100px;
+}
+
+.edit-contact h2{
+    color: #1f516e;
+}
+/*HEADER FOR CONTACT NEW*/
+
+
+/*CONTACT DETAILS*/
+.new-contact-details{
+    margin-left: 200px;
+    margin-top: 40px;
+    width: 60%;
+}
+
+.new-contact-details .col1{
+    width: 25%;
+    float:left;
+}
+
+.new-contact-details .col2{
+    width: 25%;
+    float:right;
+}
+
+.new-contact-details p{
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
+
+.new-contact-details input{
+    border: 2px solid #1f516e;
+    border-radius: 5px;
+    height: 40px;
+    width: 200%;
+    padding-left: 20px;
+}
+
+.new-contact-details input::placeholder{
+    opacity: 0.5;
+}
+
+.new-contact-details input.desc{
+    height: 150px;
+}
+
+.new-contact-details .button{
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    background-color: #1f516e;
+    cursor: pointer;
+    height: 45px;
+    width: 80%;
+    margin-top: 100px;
+    margin-left: 330px;
+  }
+
+  .new-contact-details .button p{
+    margin-top: 5px;
+    margin-right: 10px;
+    color: #fff;
+  }
+  
+  .new-contact-details .button:hover{
+    opacity: 0.5;
+  }
+  
+  .new-contact-details .button i{
+    float:left;
+    font-size: 25px;
+    margin-left: 20px;
+  }
+/*CONTACT DETAILS*/
+
+
+.custom-dropdown {
+    position: relative;
+    height: 40px;
+    width: 200%;
+  }
+
+  .custom-dropdown select {
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #1f516e;
+    border-radius: 4px;
+    background-color: #fff;
+    appearance: none; 
+  }
+
+  .custom-dropdown::after {
+    content: "";
+    border: solid transparent;
+    border-width: 7px;
+    border-top-color: #1f516e; 
+    position: absolute;
+    top: 60%;
+    right: 20px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  .custom-dropdown select::-ms-expand {
+    display: none;
+  }
+  
+  .toast-success {
+    background-color: green;
+  }

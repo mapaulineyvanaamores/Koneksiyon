@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
+*{
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*HEADER OF CONTACTS SECTIONS*/
+.header-content .text{
+    font-size: 25px;
+    font-weight: 600;
+    color: #1f516e;
+    margin: 12px;
+    padding: 5px;
+    padding-left: 20px;
+}
+
+hr.divider{
+    border-top: 1px solid #1f516e;;
+    opacity: 0.2;
+}
+/*HEADER OF CONTACTS SECTIONS*/
+
+/*SEARCH BAR OF CONTACTS SECTIONS*/
+.search-bar {
+    position: relative;
+    height: 45px;
+    max-width: 450px;
+    width: 100%;
+    background: #fff;
+    margin: 30px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    float:left;
+  }
+
+  .search-bar i,
+  .search-bar .button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .search-bar i {
+    left: 20px;
+    font-size: 30px;
+    color: #1f516e;
+  }
+
+  .search-bar input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    border: 2px solid #1f516e;
+    border-radius: 15px;
+    padding: 0 155px 0 65px;
+    background-color: transparent;
+  }
+
+  .search-bar input::placeholder{
+    opacity: 0.5;
+}
+
+  .search-bar .button {
+    right: 20px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 10px;
+    background-color: #1f516e;
+    cursor: pointer;
+  }
+
+  .search-bar .button:active {
+    transform: translateY(-50%) scale(0.98);
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 500px) {
+    .search-bar {
+      height: 66px;
+      margin: 0 8px;
+    }
+
+    .search-bar i {
+      left: 12px;
+      font-size: 25px;
+    }
+
+    .search-bar input {
+      padding: 0 112px 0 50px;
+    }
+    
+    .search-bar .button {
+      right: 12px;
+      font-size: 14px;
+      padding: 8px 18px;
+    }
+  }
+/*SEARCH BAR OF CONTACTS SECTIONS*/
+
+/* SORT BY OF CONTACTS SECTIONS */
+.sorting-bar {
+  z-index: 1;
+}
+
+.sort-by {
+  float: right;
+  margin-right: 25px;
+}
+
+.sort-by select {
+  position: relative;
+  height: 45px;
+  max-width: 170px;
+  width: 100%;
+  background: #fff;
+  margin: 30px 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #1f516e;
+  text-align: left;
+  text-indent: 40px;
+}
+
+.sort-by i {
+  font-size: 25px;
+  color: #1f516e;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 40px;
+  z-index: 1;
+}
+/* SORT BY OF CONTACTS SECTIONS */
+
+/* FILTER BY OF CONTACTS SECTIONS */
+.filters {
+  float: right;
+  margin-right: 20px;
+}
+
+.filters select {
+  position: relative;
+  height: 45px;
+  max-width: 170px;
+  width: 100%;
+  background: #fff;
+  margin: 30px 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #1f516e;
+  text-align: left;
+  text-indent: 40px;
+  /* Remove or adjust the z-index property */
+}
+
+.filters select option {
+  padding: 20px 20px;
+}
+
+.filters i {
+  font-size: 25px;
+  color: #1f516e;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 40px;
+  z-index: 1;
+}
+/* FILTER BY OF CONTACTS SECTIONS */
+
+
+/*NEW CONTACT OF CONTACTS SECTIONS*/
+.new-contact{
+  float:right;
+  margin-right: 80px;
+}
+
+.new-contact .button{
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  border: none;
+  margin: 30px 30px;
+  border-radius: 8px;
+  background-color: #1f516e;
+  cursor: pointer;
+  height: 45px;
+  width: 120%;
+}
+
+.new-contact .button:hover{
+  opacity: 0.5;
+}
+
+.new-contact i{
+  float:left;
+  font-size: 25px;
+  margin-left: 20px;
+}
+
+.new-contact p{
+  margin-top: 5px;
+  margin-right: 10px;
+}
+/*NEW CONTACT OF CONTACTS SECTIONS*/
+
+/*CONTACT LIST TABLES*/
+.favorite-row {
+  background-color: #1f516e18;
+  border: 1px solid #e99f4c;
+}
+
+.contact-list table th,
+.contact-list table td {
+  border: none;
+}
+
+/* Default line height */
+.contact-list table {
+  --default-line-height: 30px;
+}
+
+/* Line height for 10 rows per page */
+@media screen and (min-width: 768px) {
+  .contact-list table {
+    --line-height-10-rows: 20px;
+  }
+}
+
+/* Line height for 25 rows per page */
+@media screen and (min-width: 1024px) {
+  .contact-list table {
+    --line-height-5-rows: 50px;
+  }
+}
+
+.contact-list table{
+  width: 100%;
+  padding: 25px;
+  text-align: left;
+  border-spacing: 0;
+}
+
+.contact-list table .button {
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    border: none;
+    padding: 2px 10px;
+    border-radius: 10px;
+    background-color: #1f516e;
+    cursor: pointer;
+}
+
+.contact-list table .fav-button {
+  font-size: 20px;
+  font-weight: 400;
+  color: #e99f4c;
+  border: none;
+  padding: 2px 10px;
+  border-radius: 10px;
+  background-color: #ffffff00;
+  cursor: pointer;
+}
+
+.contact-list table .button:hover {
+  opacity: 0.5;
+}
+
+.contact-list table th{
+  color: #1f516e;
+}
+/*CONTACT LIST TABLES*/
+
+/*FOOTER CONTROLLER*/
+.footer-controller{
+  position: fixed;
+  bottom: 15px;
+  margin-left: 30px;
+  width: 100%;
+}
+
+.page-controller{
+  float: left;
+}
+
+.row-controller {
+  position: fixed;
+  float: right;
+  overflow: hidden;
+  width: 30%;
+  right: 0;
+  padding-left: 10px; 
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.row-controller label {
+  margin-right: 15px;
+  margin-left: 190px;
+}
+
+.row-controller select {
+  text-align: center;
+}
+
+.row-count{
+    white-space: nowrap; 
+    z-index: -1;
+    border-radius: 5px; 
+    width: 15%;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.row-controller .backward-page{
+  float: left;
+  text-align: center;
+}
+
+.row-controller .backward-page .back{
+  border: 2px solid black;
+  border-radius: 5px; 
+  width: 30px;
+  cursor: pointer;
+  margin-left: 30px;
+}
+
+.row-controller .backward-page .back:hover{
+  opacity: 0.5;
+}
+
+.row-controller .forward-page{
+  float: left;
+  text-align: center;
+}
+
+.row-controller .forward-page .forward:hover{
+  opacity: 0.5;
+}
+
+.row-controller .forward-page .forward{
+  border: 2px solid black;
+  border-radius: 5px; 
+  margin-left: 10px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.total-rows{
+  position: fixed;
+  float: left;
+  overflow: hidden;
+  padding-right: 200px; 
+}
+
+.table-row-count{
+  position: fixed;
+  float: right;
+  overflow: hidden;
+  width: 50px;
+  border: 2px solid black;
+  border-radius: 5px; 
+  text-align: center;
+  margin-left: 5px;
+  font-size: 14px;
+}
+/*FOOTER CONTROLLER*/
+
+.fav-button {
+  background-color: yellow; 
+}
+
+.more-actions {
+  background-color: white;
+  text-align: center;
+  border: 2px solid #1f516e;
+  border-radius: 5px;
+  width: 150px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  right: 100px;
+  top: 280px; /* Adjust the top position to position it correctly */
+  z-index: 1;
+}
+
+.more-actions.visible {
+  opacity: 1;
+}
+
+.more-actions a {
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
+}
+
+.more-actions a:hover {
+  color: #e99f4c;
+}
+
+/* Remove z-index: -1; as it's not necessary */

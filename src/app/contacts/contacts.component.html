@@ -1,0 +1,94 @@
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<div class="header-content">  
+    <div class="text">Contact List</div>
+    <hr class="divider">
+</div>
+
+
+    <div class="sorting-bar">
+        <div class="search-bar">
+            <i class='bx bx-search-alt'></i>
+            <input type="text" placeholder="Search for contact by name..." [(ngModel)]="searchTerm" (keydown)="search($event)"/>
+        </div>
+        <div class="new-contact">
+            <button class="button" (click)="navigateToAddContact()">
+                <i class='bx bx-add-to-queue' ></i>
+                <p>Add Contact</p>
+            </button>
+        </div>
+        <div class="filters">
+            <i class='bx bx-filter-alt' ></i>
+            <select #filters [(ngModel)]="selectedFilter" (change)="onSelected(selectedFilter)">
+                <option value="" selected disabled>Filters</option>
+                <option value="all-contacts">All Contacts</option>
+                <option value="favorite-contacts">Favorites</option>
+            </select>
+        </div>
+        <div class="sort-by">
+            <i class='bx bx-sort-alt-2' ></i>
+            <select #sorting (change)="onSelected(sorting.value)">
+                <option value="" selected disabled >Sort By</option>
+                <option value="alpha-high">Name (A-Z)</option>
+                <option value="alpha-low">Name (Z-A)</option>
+                <option value="date-latest">Date (Newest)</option>
+                <option value="date-oldest">Date (Oldest)</option>
+            </select>
+        </div>
+    </div>
+
+
+<div class="contact-list">
+    <table> 
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Telephone Number</th>
+            <th>Favorite Flag</th>
+            <th>Creation Timestamp</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor = "let data of contactData | async | filterContacts: searchTerm | paginate: currentPage:pageSize" [ngClass]="{'favorite-row': data.contactType === 'favorite'}" [style.line-height]="lineHeight"> 
+            <td> 
+                <button class="fav-button" (click)="toggleFavorite(data.id,data.contactType)">
+                    <ng-container *ngIf="data.contactType === 'favorite'; else notClicked">
+                      <i class="bx bxs-star"></i> 
+                    </ng-container>
+                    <ng-template #notClicked >
+                      <i class="bx bx-star"></i> 
+                    </ng-template>
+                  </button>                       
+            </td>
+            <td>{{ data.name }}</td>
+            <td>{{ data.email }}</td>
+            <td>{{ data.phonenumber }}</td>
+            <td><i class='bx bxs-flag-alt'></i> {{ data.country }}</td>
+            <td *ngIf="data.creationDate">{{ data.creationDate.toDate() | date:'medium' }}</td>
+            <td>
+                <button class="button" (click)="navigateToViewContact(data.id)"><i class='bx bxs-contact' ></i></button> | <button class="button" (click)="navigateToEditContact(data.id)"><i class='bx bx-edit-alt' ></i></button> | <button class="button" (click)="deleteData(data.id)"><i class='bx bx-trash'></i></button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="footer-controller">
+    <div class="page-controller"><span>Page {{ currentPage }} of {{ totalPages }}</span> </div>
+    <div class="row-controller">
+        <div class="total-rows">
+            Existing Rows: <span class="table-row-count">{{tableRowCount}}</span>
+        </div>
+        <label for="page_size">Rows Per Page:</label>
+            <select class="row-count" id="page_size" name="page_size" [(ngModel)]="pageSize" #pageSizeSelect (change)="changePageSize(+pageSizeSelect.value)">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+            </select>
+        <div class="backward-page">
+            <button class="back" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1"><i class='bx bxs-left-arrow-alt'></i></button>
+        </div>
+        <div class="forward-page">
+            <button class="forward" (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages"><i class='bx bxs-right-arrow-alt'></i></button>
+        </div>
+    </div>
+</div>

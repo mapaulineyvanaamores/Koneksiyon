@@ -1,0 +1,54 @@
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<div class="header-content">  
+    <button class="button" (click)="navigateToContacts()"> 
+        <i class='bx bxs-left-arrow-circle'></i>
+    </button>
+    <div class="text">New Contact</div>
+    <hr class="divider">
+</div>
+
+<div class="edit-contact">
+    <h2>Add a New Contact</h2>
+    <p>Enter the following information for your new contact.</p>
+</div>
+
+<form #f="ngForm" (ngSubmit)="addData(f)">
+    <div class="new-contact-details">
+        <div class="col1">
+            <p class="input-label">Name</p>
+            <input type="text" name="name" placeholder="Input contact name" ngModel>
+            <p ToastrService></p>
+            <p class="input-label">Email Address</p>
+            <input type="email" name="email" placeholder="Enter your email address" ngModel>
+            <p ToastrService></p>
+            <p class="input-label">Telephone Number</p>
+            <input type="text" name="phonenumber" placeholder="numerical characters only, + is optional (example: +639223334444)" ngModel>
+            <p ToastrService></p>
+            <p class="input-label">Favorite Flag</p>
+            <div class="custom-dropdown">
+                <select class="form-control" name="country" id="country" ngModel>
+                    <option value="" disabled selected>Select Country</option>
+                    <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+               </select>
+            </div>
+            <p ToastrService></p>
+        </div>
+        <div class="col2">
+            <p class="input-label">Nickname</p>
+            <input type="text" name="nickname" placeholder="place a custom nickname " ngModel>
+            <p ToastrService></p>
+            <p class="input-label">Affiliation</p>
+            <input type="text" name="affiliation" placeholder="enter affiliation with contact " ngModel>
+            <p ToastrService></p>
+            <p class="input-label">Description</p>
+            <input type="text" name="description" placeholder="add a custom description" class="desc" ngModel>
+            <p ToastrService></p>
+            <button type="submit" class="button">
+                <i class='bx bx-save' ></i>
+                <p>Save Details</p>
+            </button>
+        </div>
+    </div>
+</form>
