@@ -10,7 +10,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Google Firebase
 - API
 
-
 ## Functional Requirements
 
 ### Contact Object Properties
