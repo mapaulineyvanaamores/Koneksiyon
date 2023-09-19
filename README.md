@@ -1,14 +1,12 @@
 # Koneksiyon
 
+![Static Badge](https://img.shields.io/badge/angular-16.2.0-%23dd0031?logo=Angular&logoColor=%23dd0031&label=Angular&labelColor=white)
+![Static Badge](https://img.shields.io/badge/typescript-5.1.3-%23007bcf?logo=TypeScript&logoColor=%23007bcf&label=TypeScript&labelColor=white)
+![Static Badge](https://img.shields.io/badge/html-5-%23e44d26?logo=Html5&logoColor=%23e44d26&label=HTML&labelColor=white)
+![Static Badge](https://img.shields.io/badge/css-3-%23379ad5?logo=CSS3&logoColor=%23379ad5&label=CSS&labelColor=white)
+![Static Badge](https://img.shields.io/badge/firebase-7.6.1-%23039be5?logo=Firebase&logoColor=%23ffcc31&label=Firebase&labelColor=white)
+
 This project is a contact list web application that allows users to manage their contacts.  
-
-## Tech Stack
-- ![angular-logo-24](https://github.com/mapaulineyvanaamores/Koneksiyon/assets/75066763/98bcec34-1404-4704-af67-1a8c90f5d4c5) [Angular Framework (version 16.2.1.)](https://angular.io)
-- ![typescript-logo-24](https://github.com/mapaulineyvanaamores/Koneksiyon/assets/75066763/9237cc82-a714-47b2-b919-1e0d8a2d9eb1) [Typescript](https://www.typescriptlang.org)
-- ![css3-logo-24](https://github.com/mapaulineyvanaamores/Koneksiyon/assets/75066763/d46419ee-9dfe-4c96-af06-3064b7b6d722) [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- ![html5-logo-24](https://github.com/mapaulineyvanaamores/Koneksiyon/assets/75066763/23abf0b4-b87c-4167-ac85-f3dea564a6bd) [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- ![firebase-logo-24](https://github.com/mapaulineyvanaamores/Koneksiyon/assets/75066763/34ce7b21-c692-457e-b978-b95dc9d96f00) [Google Firebase](https://firebase.google.com)
-
 
 ## Getting Started
 
