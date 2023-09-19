@@ -1,4 +1,4 @@
-![378211879_1130551597923156_7911926641784480276_n (1)](https://github.com/mapaulineyvanaamores/Koneksiyon/assets/75066763/be20fef7-26b2-4b37-b600-a84bf928d513)# Koneksiyon
+# Koneksiyon
 
 This project is a contact list web application that allows users to manage their contacts. It fulfills the following functional requirements:
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
