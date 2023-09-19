@@ -6,13 +6,9 @@
 ![Static Badge](https://img.shields.io/badge/css-3-%23379ad5?logo=CSS3&logoColor=%23379ad5&label=CSS&labelColor=white)
 ![Static Badge](https://img.shields.io/badge/firebase-7.6.1-%23039be5?logo=Firebase&logoColor=%23ffcc31&label=Firebase&labelColor=white)
 
-This project is a contact list web application that allows users to manage their contacts.  
+This project is a a web application designed to help users manage their contacts effectively. It provides a convenient and user-friendly platform for individuals to organize and maintain their contact information. 
 
 ## Getting Started
-
-To get started with this project, follow the instructions in the [Installation](#installation) section below.
-
-## Installation
 
 To run this Contact List web application locally, follow these steps:
 
