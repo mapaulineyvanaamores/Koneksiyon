@@ -1,10 +1,11 @@
-# Koneksiyon
+![378211879_1130551597923156_7911926641784480276_n (1)](https://github.com/mapaulineyvanaamores/Koneksiyon/assets/75066763/be20fef7-26b2-4b37-b600-a84bf928d513)# Koneksiyon
 
 This project is a contact list web application that allows users to manage their contacts. It fulfills the following functional requirements:
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
 ## Tech Stack
-- Angular Framework (version 16.2.1.) ![alt text](http://url/to/img.png](https://en.m.wikipedia.org/wiki/File:Angular_full_color_logo.svg)](https://www.google.com/url?sa=i&url=https%3A%2F%2Fangular.io%2Fpresskit&psig=AOvVaw3cfbf7LSRLd6oy4d7k_hKP&ust=1695213110644000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCIDt2IvXtoEDFQAAAAAdAAAAABAJ)
+- Angular Framework (version 16.2.1.) ![378211879_1130551597923156_7911926641784480276_n (1)](https://github.com/mapaulineyvanaamores/Koneksiyon/assets/75066763/b6e57fff-005c-45c7-9e86-d1306a0a0a97)
+
 - Typescript
 - CSS and HTML
 - Google Firebase
