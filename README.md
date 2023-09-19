@@ -4,7 +4,7 @@ This project is a contact list web application that allows users to manage their
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
 ## Tech Stack
-- Angular Framework (version 16.2.1.) ![378211879_1130551597923156_7911926641784480276_n (1)](https://github.com/mapaulineyvanaamores/Koneksiyon/assets/75066763/b6e57fff-005c-45c7-9e86-d1306a0a0a97)
+- Angular Framework (version 16.2.1.) 
 
 - Typescript
 - CSS and HTML
