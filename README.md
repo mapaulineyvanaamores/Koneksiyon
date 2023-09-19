@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
 ## Tech Stack
-- Angular Framework (Required)
+- Angular Framework
 - Typescript
 - CSS and HTML
 - Google Firebase
