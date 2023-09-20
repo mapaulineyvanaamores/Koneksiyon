@@ -118,53 +118,40 @@ export class EditContactComponent implements OnInit {
     }
 
     if (formData.email !== undefined || formData.phonenumber !== undefined) {
-        if (email && email.match(emailRegex)) {
-            // Email is set, perform the update
-            this.toastr.info('Email is set, performing the update...', 'Info');
-            console.log('Email is set. Performing the update...');
+      if (formData.email && formData.email.match(emailRegex)) {
+        // Email is valid, perform the update
+        this.toastr.info('Email is valid, performing the update...', 'Info');
+        console.log('Email is valid. Performing the update...');
+      } else if (formData.phonenumber && formData.phonenumber.match(phoneNumberRegex)) {
+        // Phone number is valid, perform the update
+        this.toastr.info('Phone Number is valid, performing the update...', 'Info');
+        console.log('Phone Number is valid. Performing the update...');
+      } else {
+        // Neither email nor phone number is valid
+        this.toastr.error('Either Email/Phone Number is not valid. Cannot update.', 'Error');
+        console.log('Either Email/Phone Number is not valid. Cannot update.');
+        return; // Exit the function to prevent further processing
+      }
     
-            formData.updateDate = serverTimestamp();
-
-            updateDoc(docRef, formData)
-                .then(() => {
-                    this.toastr.success('Contact Updated Successfully!', 'Success');
-                    console.log('Contact Updated Successfully!');
-                    this.router.navigate(['/app-contacts']);
-                })
-                .catch((err) => {
-                    this.toastr.error('Error updating document.', 'Error');
-                    console.error('Error updating document:', err);
-                });
-
-        } else if (phoneNumber && phoneNumber.match(phoneNumberRegex)) {
-            // Telephone number is valid, perform the update
-            this.toastr.info('Telephone Number is valid, performing the update...', 'Info');
-            console.log('Telephone Number is valid. Performing the update...');
+      // Common update logic (if email or phone number is valid)
+      formData.updateDate = serverTimestamp();
     
-            formData.updateDate = serverTimestamp();
-
-            updateDoc(docRef, formData)
-                .then(() => {
-                    this.toastr.success('Contact Updated Successfully!', 'Success');
-                    console.log('Contact Updated Successfully!');
-                    this.router.navigate(['/app-contacts']);
-                })
-                .catch((err) => {
-                    this.toastr.error('Error updating document.', 'Error');
-                    console.error('Error updating document:', err);
-                });
-
-        } else {
-            this.toastr.error('Either Email/Telephone Number is not valid. Cannot update.', 'Error');
-            // Neither email nor valid telephone number is set
-            console.log('Either Email/Telephone Number is not valid. Cannot update.');
-        }
+      updateDoc(docRef, formData)
+        .then(() => {
+          this.toastr.success('Contact Updated Successfully!', 'Success');
+          console.log('Contact Updated Successfully!');
+          this.router.navigate(['/app-contacts']);
+        })
+        .catch((err) => {
+          this.toastr.error('Error updating document.', 'Error');
+          console.error('Error updating document:', err);
+        });
     } else {
-        // Neither email nor telephone number is set, no update needed
-        this.toastr.info('Neither Email nor Telephone Number is set.', 'No Update');
-        console.log('Neither Email nor Telephone Number is set. No update needed.');
+      // Neither email nor phone number is set, no update needed
+      this.toastr.info('Neither Email nor Phone Number is set.', 'No Update');
+      console.log('Neither Email nor Phone Number is set. No update needed.');
     }
-
+    
     if (formData.nickname !== undefined) {
       if (formData.nickname === "") {
         this.toastr.info('Nickname removed.', 'Info');
