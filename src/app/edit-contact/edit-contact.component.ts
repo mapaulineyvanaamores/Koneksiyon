@@ -86,36 +86,38 @@ export class EditContactComponent implements OnInit {
     const email = formData.email;
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-    if (formData.name) {
+    if (formData.name && formData.name.trim() !== "") {
+      // The 'name' property exists and is not an empty string.
+      console.log(formData.name);
       const isUnique = await this.isNameNotUnique(formData.name);
       if (!isUnique) {
-          this.toastr.info('Name is unique, performing the update...', 'Info');
-          console.log('Name is unique, performing the update...');
-
-          formData.updateDate = serverTimestamp();
-
-          updateDoc(docRef, formData)
-              .then(() => {
-                  formData.value.name = this.capitalizeFirstLetter(formData.name);
-                  this.toastr.success('Contact Updated Successfully!', 'Success');
-                  console.log('Contact Updated Successfully!');
-                  this.router.navigate(['/app-contacts']);
-              })
-              .catch((err) => {
-                  this.toastr.error('Error updating document.', 'Error');
-                  console.error('Error updating document:', err);
-              });
-
+        this.toastr.info('Name is unique, performing the update...', 'Info');
+        console.log('Name is unique, performing the update...');
+    
+        formData.updateDate = serverTimestamp();
+    
+        updateDoc(docRef, formData)
+          .then(() => {
+            formData.name = this.capitalizeFirstLetter(formData.name);
+            this.toastr.success('Contact Updated Successfully!', 'Success');
+            console.log('Contact Updated Successfully!');
+            this.router.navigate(['/app-contacts']);
+          })
+          .catch((err) => {
+            this.toastr.error('Error updating document.', 'Error');
+            console.error('Error updating document:', err);
+          });
+    
       } else {
-          this.toastr.error('Name is not unique, cannot update.', 'Error');
-          console.log('Name is not unique, cannot update.');
+        this.toastr.error('Name is not unique, cannot update.', 'Error');
+        console.log('Name is not unique, cannot update.');
       }
-
     } else {
-        console.log('formData.name did not change, no update needed.');
-      }
+      this.toastr.info('Name did not change or is empty.', 'No Update');
+      console.log('Name did not change or is empty, no update needed.');
+    }
 
-    if (formData.email || formData.phonenumber) {
+    if (formData.email !== undefined || formData.phonenumber !== undefined) {
         if (email && email.match(emailRegex)) {
             // Email is set, perform the update
             this.toastr.info('Email is set, performing the update...', 'Info');
@@ -159,31 +161,48 @@ export class EditContactComponent implements OnInit {
         }
     } else {
         // Neither email nor telephone number is set, no update needed
+        this.toastr.info('Neither Email nor Telephone Number is set.', 'No Update');
         console.log('Neither Email nor Telephone Number is set. No update needed.');
     }
 
-    if (formData.nickname) {
-          this.toastr.info('Nickname changed, performing the update...', 'Info');
-          console.log('Nickname changed, performing the update...');
-
-          formData.updateDate = serverTimestamp();
-
-          updateDoc(docRef, formData)
-              .then(() => {
-                  this.toastr.success('Contact Updated Successfully!', 'Success');
-                  console.log('Contact Updated Successfully!');
-                  this.router.navigate(['/app-contacts']);
-              })
-              .catch((err) => {
-                  this.toastr.error('Error updating document.', 'Error');
-                  console.error('Error updating document:', err);
-              });
-
+    if (formData.nickname !== undefined) {
+      if (formData.nickname === "") {
+        this.toastr.info('Nickname removed.', 'Info');
+        console.log('Nickname changed to an empty string.');
       } else {
-          console.log('Nickname is not changed. No update needed.');
+        this.toastr.info('Nickname changed.', 'Info');
+        console.log('Nickname changed to:', formData.nickname);
       }
     
-      if (formData.affiliation) {
+      this.toastr.info('Performing the update...', 'Info');
+      console.log('Performing the update...');
+    
+      formData.updateDate = serverTimestamp();
+    
+      updateDoc(docRef, formData)
+        .then(() => {
+          this.toastr.success('Contact Updated Successfully!', 'Success');
+          console.log('Contact Updated Successfully!');
+          this.router.navigate(['/app-contacts']);
+        })
+        .catch((err) => {
+          this.toastr.error('Error updating document.', 'Error');
+          console.error('Error updating document:', err);
+        });
+    } else {
+      this.toastr.info('Nickname is not changed.', 'No Update');
+      console.log('Nickname is not present. No update needed.');
+    }
+    
+      if (formData.affiliation !== undefined) {
+        if (formData.affiliation === "") {
+          this.toastr.info('Affiliation removed.', 'Info');
+          console.log('Affiliation changed to an empty string.');
+        } else {
+          this.toastr.info('Affiliation changed.', 'Info');
+          console.log('Affiliation changed to:', formData.affiliation);
+        }
+
         this.toastr.info('Affiliation changed, performing the update...', 'Info');
         console.log('Affiliation changed, performing the update...');
 
@@ -201,10 +220,19 @@ export class EditContactComponent implements OnInit {
             });
 
       } else {
+        this.toastr.info('Affiliation is not changed.', 'No Update');
           console.log('Affiliation is not changed. No update needed.');
       }
 
-      if (formData.description) {
+      if (formData.description!== undefined) {
+        if (formData.description === "") {
+          this.toastr.info('Description removed.', 'Info');
+          console.log('Description changed to an empty string.');
+        } else {
+          this.toastr.info('Description changed.', 'Info');
+          console.log('Description changed to:', formData.description);
+        }
+
         this.toastr.info('Description changed, performing the update...', 'Info');
         console.log('Description changed, performing the update...');
 
@@ -222,6 +250,7 @@ export class EditContactComponent implements OnInit {
             });
 
       } else {
+          this.toastr.info('Description is not changed.', 'No Update');
           console.log('Description is not changed. No update needed.');
       }  
   }
