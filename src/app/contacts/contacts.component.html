@@ -66,7 +66,7 @@
             <td><i class='bx bxs-flag-alt'></i> {{ data.country }}</td>
             <td *ngIf="data.creationDate">{{ data.creationDate.toDate() | date:'medium' }}</td>
             <td>
-                <button class="button" (click)="navigateToViewContact(data.id)"><i class='bx bxs-contact' ></i></button> | <button class="button" (click)="navigateToEditContact(data.id)"><i class='bx bx-edit-alt' ></i></button> | <button class="button" (click)="deleteData(data.id)"><i class='bx bx-trash'></i></button>
+                <button class="button" (click)="navigateToViewContact(data.id)"><i class='bx bxs-contact' ></i></button> | <button class="button" (click)="navigateToEditContact(data.id)"><i class='bx bx-edit-alt' ></i></button> | <button class="button" (click)="deleteData(data.id, data.name)"><i class='bx bx-trash'></i></button>
             </td>
         </tr>
     </table>

@@ -228,9 +228,9 @@ export class ContactsComponent implements OnInit {
     }
   }
   
-  deleteData(id: string) {
+  deleteData(id: string, name: string) {
     // Show a confirmation dialog
-    const userConfirmed = window.confirm('Are you sure you want to delete this contact?');
+    const userConfirmed = window.confirm('Are you sure you want to delete this contact?\n' + 'Name of Contact: '+ name);
   
     // Check if the user confirmed the deletion
     if (userConfirmed) {
