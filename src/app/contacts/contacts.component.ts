@@ -178,13 +178,16 @@ export class ContactsComponent implements OnInit {
       this.pageSize = newSize;
 
     // Determine the appropriate line height based on the selected page size
-      if (newSize === 10) {
+      if (newSize === 5) {
         this.lineHeight = '50px'; // Line height for 10 rows per page
-      } else if (newSize === 5) {
+      } else if (newSize === 10) {
         this.lineHeight = '50px'; // Line height for 25 rows per page
-      }
-      else if (newSize ===25) {
-        this.lineHeight = '30px';
+      } else if (newSize === 15) {
+        this.lineHeight = '40px'; // Line height for 25 rows per page
+      } else if (newSize === 20) {
+        this.lineHeight = '33px'; // Line height for 25 rows per page
+      } else if (newSize ===25) {
+        this.lineHeight = '20px';
       }
       this.currentPage = 1; // Reset to the first page when changing page size
       this.getData();
