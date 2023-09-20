@@ -41,7 +41,7 @@ export class AddContactComponent implements OnInit {
       return;
     }
     
-    //Email must follow a typical email address format.
+    //Require use to input a name
     if (!name && !email && (!phoneNumber || phoneNumber.replace(/\D/g, '').length !>= 13)) {
       this.toastr.error('Name is required.', 'Error');
       console.log('Name is required.');
